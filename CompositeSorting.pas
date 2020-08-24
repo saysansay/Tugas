@@ -40,6 +40,12 @@ begin
         t.NIP:=dtKaryawan[i].NIP;
         dtKaryawan[i].NIP:=dtKaryawan[j].NIP;
         dtKaryawan[j].NIP:=t.NIP;
+        t.Nama:=dtKaryawan[i].Nama;
+        dtKaryawan[i].Nama:=dtKaryawan[j].Nama;
+        dtKaryawan[j].Nama:=t.Nama;
+        t.Gol:=dtKaryawan[i].Gol;
+        dtKaryawan[i].Gol:=dtKaryawan[j].Gol;
+        dtKaryawan[j].Gol:=t.Gol;
       end;
 
   writeln('Result Sorting :');
