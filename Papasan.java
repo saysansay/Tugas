@@ -60,11 +60,11 @@ public class Papasan {
             menit3 = (konvdet2 % 3600)/60;
             detik3 = (konvdet2 % 3600)%60;
             s3 = s3 - s2;
-            System.out.println("Ali berpapasan dengan dadu pada jark tempuh dadu "+s3;
+            System.out.println("Ali berpapasan dengan dadu pada jark tempuh dadu "+s3);
             System.out.println("Jam "+jam3 +" Menit "+menit3 +" Detik "+detik3);
             System.exit(0);//keluar procedure
         }
-           //System.out.println("Detik "+t1 +" Jarak Ali "+s1 +" Jarak ");
+           System.out.println("Detik "+t1 +" Jarak Ali "+s1 +" Jarak ");
             
     }
         if (ispapasan==0){
