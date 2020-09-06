@@ -1,0 +1,79 @@
+#include <iostream>
+#include<iomanip>
+
+using namespace std;
+
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+int main(int argc, char** argv) {
+	int jam1,menit1,detik1,jam2,menit2,detik2;
+	int jam3,menit3,detik3;// variable penampung jam tersalip
+	int kovdet1,kovdet2 ;
+	int t1,t2;
+	double v1,v2,s1,s2;
+	int istersalip;
+	s1 = 0.0;
+	s2 = 0.0;
+	t1 = 0;
+	t2 = 0;
+	v1 = 2.0;
+	v2 = 3.0;
+	// Bisa menggunakan cout dan cin
+	//jam berangkat ali
+	jam1=8;
+	menit1=0;
+	detik1=0;
+	//jam berangkat dadu
+	jam2=8;
+	menit2=1;
+	detik2=0;
+	
+	//Konversi kedetik
+	kovdet1 =(jam1*3600)+(menit1*60)+detik1;
+	kovdet2 =(jam2*3600)+(menit2*60)+detik2;
+	
+	//Hitung jarak tempuh berdasarkan start ali
+	while(s1<1000){
+		s1	= s1 + v1;
+		t1 =  t1 + 1; //increment waktu
+		kovdet1 = kovdet1 + 1; //Untuk mendapatkan start dadu
+		// tambah kecepatan 0.1;
+		if (t1 % 10 == 0){
+			setiosflags(ios::fixed);
+			setprecision(2);
+			v1 = v1 + 0.1;
+           cout << "tambah kecepatan 0.1"<<endl;
+		
+		}
+		if (kovdet1>=kovdet1){
+			s2 = s2 + v2 ; // setiap 1 detik 3 m
+			t2 = t2 + 1;//waktu dadu
+		//	v2 = v2 + 3;//
+			//cout << "jarak dadu "<<s2<<endl;
+		}
+		// jika dadu menyalip 
+		if (s1<s2){
+			istersalip = 1;
+			kovdet2 = kovdet2 + t2;// dapatkan detik tersalip
+			jam3 = (kovdet2/3600);
+			menit3 = (kovdet2/3600)/60;
+			detik3 = (kovdet2/3600)%60;
+			
+		}else
+		 {
+		 	istersalip = 0;
+		 }
+	 cout<<"Detik Ali "<<t1<<" Jarak tempuh "<<s1<<" Jarak tempuh dadu "<<s2<<endl;
+	}
+	if (istersalip==0){
+		
+		kovdet1 = kovdet1 + t1;// dapatkan detik ali sampai tujuan
+		jam3 = (kovdet1/3600);
+		menit3 = (kovdet1/3600)/60;
+		detik3 = (kovdet1/3600)%60;
+		cout<<"Ali Sampai Pada : Jam "<<jam3<<" Menit "<<menit3<<" Detik "<<detik3<<" Dengan Jarak tempuh "<<s1;
+	}else{
+		cout<<"Dadu menyalip ali Pada : Jam "<<jam3<<" Menit "<<menit3<<" Detik "<<detik3<<" Dengan Jarak tempuh "<<s2;
+	}
+	return 0;
+}
