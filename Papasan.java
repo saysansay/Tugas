@@ -15,7 +15,7 @@ public class Papasan {
     int jam3,menit3,detik3;
     int konvdet1,konvdet2;
     int t1,t2;
-    double v1,v2,s1,s2;
+    double v1,v2,s1,s2,s3;
     int ispapasan=0;
 // jam berangkat ali 
     jam1 = 8;
@@ -30,6 +30,7 @@ public class Papasan {
     konvdet2 =(jam2*3600)+(menit2*60)+detik2;
 
     s2 = 1000;
+    s3 = 1000;//jarak papasan
     s1 = 0;
     
     v1 = 2;
@@ -49,17 +50,21 @@ public class Papasan {
         {
             s2 = s2 - v2;//pengurangan jarak dari titik B
             t2 = t2 + 1;
+            
+                    
         }
-        if (s2 < s1){
+        if (s2<=s1){
             ispapasan = 1;//Ali dan dadu berpapasan
             konvdet2 = konvdet2 + t2 ;// hitung detik papasan
             jam3 = (konvdet2/3600);
             menit3 = (konvdet2 % 3600)/60;
             detik3 = (konvdet2 % 3600)%60;
-            System.out.println("Ali berpapasan dengan dadu pada jark tempuh dadu "+s2);
+            s3 = s3 - s2;
+            System.out.println("Ali berpapasan dengan dadu pada jark tempuh dadu "+s3;
             System.out.println("Jam "+jam3 +" Menit "+menit3 +" Detik "+detik3);
             System.exit(0);//keluar procedure
         }
+           //System.out.println("Detik "+t1 +" Jarak Ali "+s1 +" Jarak ");
             
     }
         if (ispapasan==0){
