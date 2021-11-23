@@ -77,22 +77,7 @@ function save()
 <html>
 
 <head>
-    <style>
-        body {
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            font-size: 12px
-        }
-
-        input {
-            width: 80px;
-        }
-
-        .center {
-            margin: auto;
-            width: 50%;
-            padding: 10px;
-        }
-    </style>
+   
 </head>
 
 <body>
